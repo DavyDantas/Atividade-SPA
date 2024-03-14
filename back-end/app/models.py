@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Student(models.Model):
     name = models.CharField(max_length=150)
+    matriculation = models.IntegerField(unique=True)
     grade1 = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     grade2 = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     average = models.IntegerField(blank=True, null=True)
